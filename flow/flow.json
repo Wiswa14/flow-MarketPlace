@@ -1,0 +1,44 @@
+{
+  "contracts": {
+    "NonFungibleToken": {
+      "source": "./src/flow/cadence/utility/NonFungibleToken.cdc",
+      "alias": {
+        "testnet": "0xdb770f19fdc3edc3"
+      }
+    },
+    "MetaVEvents": "./src/flow/cadence/contracts/MetaVEvents.cdc",
+    "NftMarketPlace": "./src/flow/cadence/contracts/NftMarketPlace.cdc",
+    "FlowToken": "./src/flow/cadence/contracts/FlowToken.cdc",
+    "FungibleToken": {
+      "source": "./src/flow/cadence/utility/FungibleToken.cdc",
+      "aliases": {
+        "emulator": "0xee82856bf20e2aa6",
+        "testnet": "0x9a0766d93b6608b7"
+      }
+    }
+  },
+  "networks": {
+    "emulator": "127.0.0.1:3569",
+    "mainnet": "access.mainnet.nodes.onflow.org:9000",
+    "sandboxnet": "access.sandboxnet.nodes.onflow.org:9000",
+    "testnet": "access.devnet.nodes.onflow.org:9000"
+  },
+  "accounts": {
+    "emulator-account": {
+      "address": "f8d6e0586b0a20c7",
+      "key": "7d898a4c4e80b68577cb920d206e8ba1d498b1051ed6e6e1960965fdff2fb274"
+    },
+    "testnet-account": {
+      "address": "0xf3c8c2345176a975",
+      "key": "303c4be2a607c0762b9199ff206203e5e36f5655589575ec21254546d9a9dc71"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "emulator-account": ["MetaVEvents", "NftMarketPlace", "FlowToken"]
+    },
+    "testnet": {
+      "testnet-account": ["MetaVEvents", "NftMarketPlace", "FlowToken"]
+    }
+  }
+}
